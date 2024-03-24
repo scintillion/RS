@@ -1,15 +1,29 @@
-<script lang="ts">
-import { RS1 } from '$lib/RS'
-import { onMount } from 'svelte'
-
-onMount(() => {
-	console.log ('Entry InitClient!');
-	// InitClient ();
-});
+<script>	
+	import ReflectProperty from '../Tiles/ReflectProperty.svelte';
+	import BooleanProperty from '../Tiles/BooleanProperty.svelte';
+	import Lazyload from '../Tiles/Lazyload.svelte';
+	
+	let currentComponent = ReflectProperty;
 </script>
 
+<h1>
+	Svelte + custom elements
+</h1>
 
+<p>
+	This is a supporting demo for a CSS tricks article on Svelte and custom elements (add link once live).
+</p>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<h1>Second Message!</h1>
+<button on:click={() => { currentComponent = ReflectProperty; }}>
+	Reflect property
+</button>
+<button on:click={() => { currentComponent = Lazyload; }}>
+	Lazyload
+</button>
+<button on:click={() => { currentComponent = BooleanProperty; }}>
+	Boolean property
+</button>
+
+{#if currentComponent}
+	<svelte:component this={currentComponent} />
+{/if}
