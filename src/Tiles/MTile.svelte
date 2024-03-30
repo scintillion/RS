@@ -1,7 +1,5 @@
-<svelte:options customElement="my-element" />
-
 <script>
-	export class MyElement extends HTMLElement {
+	export class MagicTile extends HTMLElement {
         myProperty = null;
         other = null;
         constructor() {
@@ -15,7 +13,7 @@
 		}
 	}
 	
-	customElements.define('my-element', MyElement);
+	customElements.define('magic-tile', MagicTile);
 	
 	const obj = {
 		hello: 'world'

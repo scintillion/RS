@@ -1,6 +1,6 @@
-<script>
+<script lang='ts'>
     import './custom-text';
-    function setAttributes(node, attributes) {
+    function setAttributes(node:any, attributes:any) {
       const applyAttributes = () => {
         Object.entries(attributes).forEach(([k, v]) => {
           if (v !== undefined) {
@@ -12,7 +12,7 @@
       };
       applyAttributes();
       return {
-        update(updatedAttributes) {
+        update(updatedAttributes:any) {
           attributes = updatedAttributes;
           applyAttributes();
         }

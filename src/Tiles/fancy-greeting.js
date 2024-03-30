@@ -16,7 +16,7 @@ export class FancyGreeting extends LitElement {
   }
   constructor() {
     super();
-    this.names = [];
+    this.names  = [];
   }
   render() {
     return html`<p>
